@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Preview - AU ZONE Books</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Center the content */
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .book-image {
+            width: 95%;
+            height: auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header Section -->
+    <nav class="bg-blue-600 text-white sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+            <div class="relative flex items-center justify-between h-16">
+                <!-- Back Arrow for Mobile and Desktop -->
+                <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                    <button onclick="history.back()" class="text-white p-2 rounded-md hover:bg-blue-500 focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 12H5"></path>
+                            <path d="M12 5l-7 7 7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+                <!-- Title Section -->
+                <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+                    <div class="flex-shrink-0 text-2xl font-bold">AU ZONE Literatures</div>
+                </div>
+            </div>
+        </div>
+    </nav>    
+
+    <!-- Book Preview Section -->
+    <section class="py-10">
+        <div class="content-container bg-white p-0 rounded-lg shadow-lg">
+            <!-- Book Information -->
+            <div class="flex flex-col items-center"><br>
+                <img id="book-image" class="book-image mb-6" style="border-radius: 10px" src="" alt="Book Image">
+                <h2 id="book-title" class="text-2xl font-semibold text-center mb-4">Book Title</h2><hr><br>
+                <!--<p id="book-description" class="text-center text-gray-600 mb-6">
+                    This is a placeholder description of the book. It will contain information about the plot, genre, and more.
+                </p>-->
+                <form action="order.html" method="get">
+                    <input type="hidden" id="book-name" name="book_name" value="">
+                    <input type="hidden" id="book-image-url" name="book_image" value="">
+                    <button class="bg-blue-600 text-white py-2 px-6 rounded-md hover:bg-blue-700 w-full" type="submit">
+                        Buy Now
+                    </button>
+                </form><br>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Retrieve the book information from the URL query parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const bookName = urlParams.get('name');
+        const bookImage = urlParams.get('image');
+
+        // Set the book title, image, and hidden inputs dynamically
+        if (bookName && bookImage) {
+            document.getElementById('book-title').textContent = bookName;
+            document.getElementById('book-image').src = bookImage;
+            document.getElementById('book-name').value = bookName;
+            document.getElementById('book-image-url').value = bookImage;
+        }
+    </script>
+
+</body>
+</html>
