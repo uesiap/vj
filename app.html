@@ -1,80 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vidhyardhi Jwala</title>
-    <style>
-        body,
-        html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #f3f4f6; /* Light background for better contrast */
-        }
-
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            display: none; /* Initially hide the iframe */
-        }
-
-        #loader {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: absolute;
-            width: 90px;
-            height: 90px;
-            border: 6px solid #f3f3f3; /* Light border */
-            border-top: 6px solid #3498db; /* Blue spinner */
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        #loader-text {
-            position: absolute;
-            margin-top: 160px;
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-            color: #555;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iframe Masking</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    .iframe-container {
+      position: relative;
+      width: 100%;
+      height: calc(100vh - 5rem); /* Adjust height if needed */
+      overflow: hidden;
+    }
+    .iframe-container iframe {
+      position: absolute;
+      top: - 5rem; /* Move content up by 50px */
+      left: 0;
+      width: 100%;
+      height: calc(100% + 5rem); /* Extend height to cover masked area */
+      border: none;
+    }
+  </style>
 </head>
-
 <body>
-    <div id="loader"></div>
-    <div id="loader-text">Downloading...</div>
-    <iframe id="pdfViewer" src="https://firebasestorage.googleapis.com/v0/b/melam-rahul.appspot.com/o/html%2FVIDYARTHI%20JWALA-DECEMBER.html?alt=media&token=66e0974e-d6d4-4fa0-a205-81c828fbbb5b" allowfullscreen></iframe>
-
-    <script>
-        const iframe = document.getElementById('pdfViewer');
-        const loader = document.getElementById('loader');
-        const loaderText = document.getElementById('loader-text');
-
-        // Event listener for iframe load event
-        iframe.onload = function () {
-            loader.style.display = 'none';
-            loaderText.style.display = 'none';
-            iframe.style.display = 'block';
-        };
-    </script>
+  <div class="iframe-container">
+    <iframe src="https://u.pcloud.link/publink/show?code=XZedw55Ztw2ifYOHjfXhMvbsex81OpNkfiAk" title="Masked Iframe"></iframe>
+  </div>
 </body>
-
 </html>
