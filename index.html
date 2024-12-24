@@ -677,7 +677,7 @@
 
     <div id="thankYouMessage" class="container" style="align-items: center; justify-content: center;display: none">
         <h1 style="text-align: center;">Thank You!</h1> <i class="fa fa-check-circle fa-3x"
-            style="color: green; font-size: 60px; margin-right: 40%; margin-left: 40%;" aria-hidden="true"></i>
+            style="color: green; font-size: 60px; margin-right: 40%; margin-left: 40%;" aria-hidden="true"></i><br>
         <div style="text-align: center;">
             <h5 class="label-input100" style="font-size: 18px;">Your Details are Submitted
                 Successfully.
@@ -757,7 +757,7 @@
                             // Redirect to the email-sending page after 2 seconds
                             setTimeout(() => {
                                 window.location.href = emailUrl;
-                            }, 2000); // 2-second delay
+                            }, 1000); // 2-second delay
                         }
                     }).catch(error => {
                         console.error("Error submitting the form:", error);
